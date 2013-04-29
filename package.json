@@ -1,0 +1,29 @@
+{
+  "name": "hubot-skype4com",
+  "description": ".NET Skype adapter for Hubot under Windows",
+  "version": "1.1.0",
+  "author": "Ingvar Stepanyan <me@rreverser.com> (http://rreverser.com/)",
+  "main": "adapter.js",
+  "os": [
+    "win32"
+  ],
+  "cpu": [
+    "ia32"
+  ],
+  "keywords": [
+    "hubot",
+    "skype",
+    "adapter",
+    "windows",
+    "native",
+    ".net"
+  ],
+  "dependencies": {
+    "edge": "*"
+  },
+  "license": "BSD",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/rreverser/hubot-skype4com.git"
+  }
+}
