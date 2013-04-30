@@ -19,8 +19,12 @@ function SkypeAdapter(robot) {
             };
         });
 
-        native.onAttachmentStatus([function (status) {
+        adapter.onAttachmentStatus(function (status) {
             switch (status) {
+                case 'apiAttachAvailable':
+                    robot.logger.info('Skype is launched. Connecting...');
+                    break;
+
                 case 'apiAttachSuccess':
                     robot.logger.info('Connected.');
                     adapter.emit('connected');
@@ -32,9 +36,9 @@ function SkypeAdapter(robot) {
                     robot.shutdown();
                     break;
             }
-        }]);
+        });
 
-        native.onMessage([function (data) {
+        adapter.onMessage(function (data) {
             var user = robot.brain.userForId(data.chatId, {name: data.chatName});
             var className;
             switch (data.messageType) {
@@ -54,10 +58,10 @@ function SkypeAdapter(robot) {
             message.text = data.messageText;
             message.id = data.messageId;
             adapter.receive(message);
-        }]);
+        });
     });
 
-    robot.logger.info('Waiting for activation...');
+    robot.logger.info('Activating Skype...');
 }
 
 SkypeAdapter.prototype = Object.create(Hubot.Adapter.prototype);
