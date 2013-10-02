@@ -5,6 +5,8 @@
 This is the [Skype](http://skype.com) adapter for [Hubot](http://hubot.github.com/) running on **Windows** machine
 with [.NET 4.5](http://www.microsoft.com/download/details.aspx?id=30653) pre-installed (no **Python** dependencies).
 
+**Please note that Skype currently provides only 32-bit binaries for native access to API so you need x86 Node.js version for this module to work.**
+
 ## Installation and usage
 
 * Install this project as a dependency in your hubot with `npm install hubot-skype4com --save`
